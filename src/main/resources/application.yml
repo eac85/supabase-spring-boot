@@ -1,13 +1,11 @@
-server:
-  port: ${SERVER_PORT:8089} #used as a port set in env variables
-logging:
-  level:
-    org.springframework.security: DEBUG
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL}
-    username:  ${SPRING_DATASOURCE_USERNAME}
+    username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
   jpa:
-    hibernate.ddl-auto: update
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
